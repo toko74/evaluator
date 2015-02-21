@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.evaluator.HomeActivity;
 import com.evaluator.R;
+import com.evaluator.db.EvaluatorAppDB;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -49,8 +50,10 @@ public class GroupDetailsFragment extends Fragment{
 
 
 
-	private List<Candidate> candidateList = new ArrayList<>();
+	private List<Candidate> candidateList;
 
+
+	private EvaluatorAppDB db;
 
 
 	@Override
@@ -76,6 +79,10 @@ public class GroupDetailsFragment extends Fragment{
 		});
 
 
+		db = new EvaluatorAppDB(getActivity());
+
+		candidateList = db.getCandidates();
+
 		candidateRecyclerView = (RecyclerView)view.findViewById(R.id.candidatesList);
 
 
@@ -93,6 +100,9 @@ public class GroupDetailsFragment extends Fragment{
 
 		return view;
 	}
+
+
+
 
 
 
@@ -121,6 +131,10 @@ public class GroupDetailsFragment extends Fragment{
 		if(sId == null || sId.isEmpty()) return;
 
 		Candidate candidate = new Candidate(Integer.parseInt(sId));
+
+
+		db.insert(candidate);
+
 		candidateAdapter.addItem(candidate);
 	}
 
@@ -236,7 +250,7 @@ public class GroupDetailsFragment extends Fragment{
 			final Candidate candidate = candidates.get(position);
 
 			holder.id.setText(candidate.getId()+"");
-			holder.name.setText(candidate.getName());
+			holder.name.setText(candidate.getName() + " " + candidate.getfName());
 			holder.status.setText(candidate.getCandidateStatus().getStatusRes());
 			holder.menu.setOnClickListener(new View.OnClickListener(){
 				@Override

@@ -7,7 +7,7 @@ public class Candidate{
 
 
 
-	private final int id;
+	private int id;
 
 
 
@@ -15,14 +15,23 @@ public class Candidate{
 
 
 
+	private String fName;
+
+
+
 	private CandidateStatus candidateStatus;
+
+
+
+	public Candidate(){}
 
 
 
 	public Candidate(int id){
 		this.id = id;
 		this.candidateStatus = CandidateStatus.STARTED;
-		this.name = "Candidate Name";
+		this.name = "John";
+		this.fName = "Doe";
 	}
 
 
@@ -30,29 +39,31 @@ public class Candidate{
 		return id;
 	}
 
-
+	public void setId(int id){
+		this.id = id;
+	}
 
 	public String getName(){
 		return name;
 	}
 
-
-
 	public void setName(String name){
 		this.name = name;
 	}
 
+	public String getfName(){
+		return fName;
+	}
 
+	public void setfName(String fName){
+		this.fName = fName;
+	}
 
 	public CandidateStatus getCandidateStatus(){
 		return candidateStatus;
 	}
 
-
-
 	public void setCandidateStatus(CandidateStatus candidateStatus){
 		this.candidateStatus = candidateStatus;
 	}
-
-
 }
