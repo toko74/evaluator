@@ -105,9 +105,14 @@ public class GroupDetailsFragment extends Fragment{
 
 
 
-
 	private void openAddPersonDialog(){
-		AddCandidateDialog dialog = AddCandidateDialog.newInstance();
+		openAddPersonDialog(null);
+	}
+
+
+
+	private void openAddPersonDialog(Candidate candidate){
+		AddCandidateDialog dialog = AddCandidateDialog.newInstance(candidate);
 		dialog.setTargetFragment(this,NEW_CANDIDATE_REQUEST_CODE);
 		dialog.show(getFragmentManager(),"dialog");
 	}
@@ -117,7 +122,6 @@ public class GroupDetailsFragment extends Fragment{
 	public static GroupDetailsFragment newInstance(){
 		GroupDetailsFragment fragment = new GroupDetailsFragment();
 
-
 		return fragment;
 	}
 
@@ -126,15 +130,10 @@ public class GroupDetailsFragment extends Fragment{
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 
-		String sId = data.getStringExtra("id");
-
-		if(sId == null || sId.isEmpty()) return;
-
-		Candidate candidate = new Candidate(Integer.parseInt(sId));
-
+		Candidate candidate = data.getParcelableExtra("candidate");
+		if(candidate == null) return;
 
 		db.insert(candidate);
-
 		candidateAdapter.addItem(candidate);
 	}
 
@@ -144,8 +143,6 @@ public class GroupDetailsFragment extends Fragment{
 
 
 		private Candidate candidate;
-
-
 
 
 		private CandidateListener(Candidate candidate){
@@ -160,9 +157,11 @@ public class GroupDetailsFragment extends Fragment{
 			switch (item.getItemId()){
 				case R.id.delete_candidate:
 					candidateAdapter.removeCandidate(candidate);
+					db.deleteCandidate(candidate);
 					break;
 
 				case R.id.edit_candidate:
+					openAddPersonDialog(candidate);
 					break;
 
 				case R.id.moov_up_candidate:

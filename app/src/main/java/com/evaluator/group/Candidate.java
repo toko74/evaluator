@@ -1,9 +1,14 @@
 package com.evaluator.group;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+
+
 /**
  * @author Gilad Opher
  */
-public class Candidate{
+public class Candidate implements Parcelable{
 
 
 
@@ -66,4 +71,22 @@ public class Candidate{
 	public void setCandidateStatus(CandidateStatus candidateStatus){
 		this.candidateStatus = candidateStatus;
 	}
+
+	@Override
+	public int describeContents(){
+		return 0;
+	}
+
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags){
+		dest.writeInt(id);
+		dest.writeString(name);
+		dest.writeString(fName);
+		dest.writeParcelable(candidateStatus, flags);
+	}
+
+
+
+
 }

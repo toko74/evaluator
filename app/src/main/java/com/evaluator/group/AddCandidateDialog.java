@@ -3,6 +3,7 @@ package com.evaluator.group;
 import android.app.*;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,15 @@ public class AddCandidateDialog extends DialogFragment{
 	private EditText userId;
 
 
+	private EditText nameEditText;
+
+
+	private EditText fNameEditText;
+
+
+
+	private CandidateStatus status;
+
 
 
 	public AddCandidateDialog(){}
@@ -35,8 +45,8 @@ public class AddCandidateDialog extends DialogFragment{
 
 
 		View view = LayoutInflater.from(getActivity()).inflate(R.layout.add_person_dialog,null);
+		setupFields(view);
 
-		userId = (EditText)view.findViewById(R.id.userId);
 
 		AlertDialog dialog =  new AlertDialog.Builder(getActivity())
 				.setTitle(R.string.person_details)
@@ -44,8 +54,16 @@ public class AddCandidateDialog extends DialogFragment{
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int whichButton) {
 								handleKeyBord(false);
-									String sId = userId.getText().toString();
-								getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, getActivity().getIntent().putExtra("id",sId));
+								Intent intent = getActivity().getIntent();
+
+								Candidate candidate = new Candidate();
+								candidate.setId(Integer.parseInt(userId.getText().toString()));
+								candidate.setName(nameEditText.getText().toString().isEmpty() ? "John" : nameEditText.getText().toString());
+								candidate.setfName(fNameEditText.getText().toString().isEmpty() ? "Doe" : fNameEditText.getText().toString());
+								candidate.setCandidateStatus(status != null ? status : CandidateStatus.STARTED);
+
+								intent.putExtra("candidate", candidate);
+								getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, intent);
 
 							}
 						}
@@ -64,10 +82,40 @@ public class AddCandidateDialog extends DialogFragment{
 		return dialog;
 	}
 
+	private void setupFields(View view){
+
+		userId = (EditText)view.findViewById(R.id.userId);
+		nameEditText = (EditText)view.findViewById(R.id.candidateName);
+		fNameEditText = (EditText)view.findViewById(R.id.candidateFamilyName);
+
+		Candidate candidate = getArguments().getParcelable("candidate");
+		if(candidate == null) return;
+
+		status = candidate.getCandidateStatus();
+
+		userId.setText(String.valueOf(candidate.getId()));
+		nameEditText.setText(candidate.getName());
+		fNameEditText.setText(candidate.getfName());
+	}
+
 
 
 	public static AddCandidateDialog newInstance(){
 		AddCandidateDialog fragment = new AddCandidateDialog();
+
+		return fragment;
+	}
+
+
+
+	public static AddCandidateDialog newInstance(Candidate candidate){
+		AddCandidateDialog fragment = new AddCandidateDialog();
+
+		if(candidate != null){
+			Bundle bundle = new Bundle();
+			bundle.putParcelable("candidate", candidate);
+			fragment.setArguments(bundle);
+		}
 
 		return fragment;
 	}

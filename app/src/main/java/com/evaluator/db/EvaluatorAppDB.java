@@ -83,6 +83,29 @@ public class EvaluatorAppDB extends SQLiteOpenHelper{
 
 
 
+	public long update(Candidate candidate){
+
+		ContentValues values = new ContentValues();
+		values.put(CandidatesContract.CandidateEntry.COLUMN_ENTITY_ID, candidate.getId());
+		values.put(CandidatesContract.CandidateEntry.COLUMN_NAME, candidate.getName());
+		values.put(CandidatesContract.CandidateEntry.COLUMN_FAMILY_NAME, candidate.getfName());
+		values.put(CandidatesContract.CandidateEntry.COLUMN_STATUS, candidate.getCandidateStatus().ordinal());
+
+		// Insert the new row, returning the primary key value of the new row
+		SQLiteDatabase db = getWritableDatabase();
+		long newRowId;
+		newRowId = db.update(
+				CandidatesContract.CandidateEntry.TABLE_NAME,
+				values,
+				CandidatesContract.CandidateEntry.COLUMN_ENTITY_ID + " = ?",
+				new String[] { String.valueOf(candidate.getId()) });
+
+		db.close();
+		return newRowId;
+	}
+
+
+
 	public List<Candidate> getCandidates(){
 		SQLiteDatabase db = getReadableDatabase();
 
@@ -106,6 +129,15 @@ public class EvaluatorAppDB extends SQLiteOpenHelper{
 		}
 		return candidates;
 
+	}
+
+
+
+	public void deleteCandidate(Candidate candidate){
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(CandidatesContract.CandidateEntry.TABLE_NAME, CandidatesContract.CandidateEntry.COLUMN_ENTITY_ID + " = ?",
+				new String[] { String.valueOf(candidate.getId()) });
+		db.close();
 	}
 
 
