@@ -88,6 +88,8 @@ public class AddCandidateDialog extends DialogFragment{
 		nameEditText = (EditText)view.findViewById(R.id.candidateName);
 		fNameEditText = (EditText)view.findViewById(R.id.candidateFamilyName);
 
+		if(getArguments() == null) return;
+
 		Candidate candidate = getArguments().getParcelable("candidate");
 		if(candidate == null) return;
 

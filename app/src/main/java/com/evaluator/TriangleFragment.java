@@ -19,7 +19,6 @@ public class TriangleFragment extends Fragment{
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		((HomeActivity)activity).onSectionAttached(R.string.triangle_title);
 	}
 
 

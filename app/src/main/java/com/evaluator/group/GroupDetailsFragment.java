@@ -1,14 +1,19 @@
 package com.evaluator.group;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import android.view.*;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -16,7 +21,9 @@ import android.widget.TextView;
 import com.evaluator.HomeActivity;
 import com.evaluator.R;
 import com.evaluator.db.EvaluatorAppDB;
-import com.melnykov.fab.FloatingActionButton;
+
+import com.melnykov.fab.ScrollDirectionListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,10 +63,15 @@ public class GroupDetailsFragment extends Fragment{
 	private EvaluatorAppDB db;
 
 
+
+	private RecyclerViewScrollDetector recyclerViewScrollDetector;
+
+
+
+
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		((HomeActivity)activity).onSectionAttached(R.string.group_details_title);
 	}
 
 
@@ -96,7 +108,12 @@ public class GroupDetailsFragment extends Fragment{
 		candidateAdapter = new CandidateAdapter(candidateList);
 		candidateRecyclerView.setAdapter(candidateAdapter);
 
-		addPerson.attachToRecyclerView(candidateRecyclerView);
+
+		//addPerson.attachToRecyclerView(candidateRecyclerView);
+
+		recyclerViewScrollDetector = new RecyclerViewScrollDetector(addPerson);
+		candidateRecyclerView.setOnScrollListener(recyclerViewScrollDetector);
+
 
 		return view;
 	}
@@ -305,4 +322,40 @@ public class GroupDetailsFragment extends Fragment{
 		}
 
 	}
+
+
+
+
+
+
+
+	private class RecyclerViewScrollDetector extends RecyclerView.OnScrollListener{
+
+
+		private int mScrollThreshold = 3;
+
+
+		private FloatingActionButton fab;
+
+
+		public RecyclerViewScrollDetector(FloatingActionButton fab) {
+			this.fab = fab;
+		}
+
+
+		public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+			boolean isSignificantDelta = Math.abs(dy) > this.mScrollThreshold;
+			if(isSignificantDelta) {
+				if(dy > 0) {
+					fab.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
+				} else {
+					fab.animate().translationY(fab.getHeight() + 30).setInterpolator(new AccelerateInterpolator(2)).start();
+				}
+			}
+
+		}
+
+	}
+
+
 }

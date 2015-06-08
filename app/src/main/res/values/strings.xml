@@ -25,4 +25,8 @@
 	<string name="enter_candidate_name">Name</string>
 	<string name="enter_candidate_family_name">Family name</string>
 
+
+	<string name="drawer_open">Open navigation drawer</string>
+	<string name="drawer_close">Close navigation drawer</string>
+
 </resources>

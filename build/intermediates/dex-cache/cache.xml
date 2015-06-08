@@ -2,60 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/classes-c5e806e707d869f07840b1a293d2c9f5e8d302c5.jar" />
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-9740f28de0a57fcfe2309301ba0260f0f9b989af.jar" />
     </item>
     <item
-        jar="/Users/giladopher/Downloads/adt-bundle-mac-x86_64-20130917/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-97ea9933ed957ace8fc29ba2426c4441e4c39aba.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-7c8df814f16c32292b4e551f2b6ae61da8cac8ce.jar" />
     </item>
     <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/classes-10dfd7a3d27e17cd8319d83e1bf9844fd4f82180.jar" />
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-4e4f0f0fb91306ea4c7f66379c07dd9af48f62af.jar" />
     </item>
     <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/classes.jar"
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/classes-97a925a0678618e312a7d977f9ec89c585f623d2.jar" />
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-a77f56cb576cbe429592cda008df166f128fd259.jar" />
     </item>
     <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/classes-6f273f0ad2d29f3e0ba9706c209b4b901bd8b8c5.jar" />
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-7d3b9257d65e7e59ef8a7b6b0b8283065297143b.jar" />
     </item>
     <item
-        jar="/Users/giladopher/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jar="/Users/giladopher/Downloads/adt-bundle-mac-x86_64-20130917/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/library-2.4.0-0d798175e596f3c35cf1fc9c8f8bd42e9f1043ce.jar" />
-    </item>
-    <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-fdbd6c238eff06ce13147846423b7b8ad9bc95ce.jar" />
-    </item>
-    <item
-        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/app/build/intermediates/pre-dexed/debug/classes-23382dcf8d4185f3a3ae1bf12e07ab382f8292e3.jar" />
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-cfc3aafddf8a60c7d42b9fcb9b4d14b9c6096c46.jar" />
     </item>
 
 </items>

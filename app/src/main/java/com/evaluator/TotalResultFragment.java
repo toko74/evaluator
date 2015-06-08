@@ -20,7 +20,6 @@ public class TotalResultFragment extends Fragment{
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		((HomeActivity)activity).onSectionAttached(R.string.total_result_title);
 	}
 
 

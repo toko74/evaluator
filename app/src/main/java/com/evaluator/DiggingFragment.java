@@ -20,7 +20,6 @@ public class DiggingFragment extends Fragment{
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		((HomeActivity)activity).onSectionAttached(R.string.digging_title);
 	}
 
 
