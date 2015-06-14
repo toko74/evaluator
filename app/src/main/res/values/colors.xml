@@ -3,5 +3,7 @@
 	<color name="primary">#99CC00</color>
 	<color name="colorPrimaryDark">#669900</color>
 	<color name="textColorPrimary">#FFFFFF</color>
+	<color name="colorSecondary">@color/material_blue_grey_800</color>
+
 
 </resources>

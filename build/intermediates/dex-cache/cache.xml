@@ -23,6 +23,13 @@
         <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-4e4f0f0fb91306ea4c7f66379c07dd9af48f62af.jar" />
     </item>
     <item
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-d4af4ff18305b6c7efa7a93a4813c70100ef4cbd.jar" />
+    </item>
+    <item
         jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -35,6 +42,20 @@
         revision="21.1.2"
         sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
         <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-7d3b9257d65e7e59ef8a7b6b0b8283065297143b.jar" />
+    </item>
+    <item
+        jar="/Users/giladopher/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/library-2.4.0-0d798175e596f3c35cf1fc9c8f8bd42e9f1043ce.jar" />
+    </item>
+    <item
+        jar="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
+        <dex dex="/Users/giladopher/Dev/gilad/TestProjects/EvaluatorApp/evaluator/app/build/intermediates/pre-dexed/debug/classes-33fc2329c77b8f8f890387761fb241e07b845ecf.jar" />
     </item>
     <item
         jar="/Users/giladopher/Downloads/adt-bundle-mac-x86_64-20130917/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"

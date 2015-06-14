@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			  android:orientation="vertical"
-			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:fab="http://schemas.android.com/apk/res-auto"
+			 android:orientation="vertical"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent">
 
-</LinearLayout>
+
+	<TextView
+		android:id="@+id/no_results_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="@android:color/black"
+		android:textSize="20sp"
+		android:layout_gravity="center"
+		android:text="@string/no_sprint_yet"/>
+
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/start_sprint"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="end|bottom"
+		android:layout_margin="10dp"
+		android:elevation="10mm"
+		android:src="@drawable/ic_add_white_24dp"/>
+
+</FrameLayout>

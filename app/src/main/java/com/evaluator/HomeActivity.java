@@ -2,14 +2,12 @@ package com.evaluator;
 
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.*;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.view.MenuInflater;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.evaluator.group.GroupDetailsFragment;
@@ -17,13 +15,6 @@ import com.evaluator.group.GroupDetailsFragment;
 
 
 public class HomeActivity extends AppCompatActivity{
-
-
-
-	/**
-	 * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-	 */
-	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 
 
@@ -44,25 +35,13 @@ public class HomeActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
 
-//		mNavigationDrawerFragment = (NavigationDrawerFragment)
-//				getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
-
 		dlDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
 		drawerToggle = setupDrawerToggle();
 		dlDrawer.setDrawerListener(drawerToggle);
 
-
-//		final ActionBar ab = getSupportActionBar();
-//		ab.setDisplayHomeAsUpEnabled(true);
-
-
 		NavigationView navigationView = (NavigationView)findViewById(R.id.navigationView);
-
-
 		navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 			@Override
 			public boolean onNavigationItemSelected(MenuItem menuItem){
@@ -72,34 +51,30 @@ public class HomeActivity extends AppCompatActivity{
 			}
 		});
 
-//
-//		// Set up the drawer.
-//		mNavigationDrawerFragment.setUp(
-//				R.id.navigation_drawer,
-//				(DrawerLayout)findViewById(R.id.drawer_layout));
-
-		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.add(R.id.container, GroupDetailsFragment.newInstance());
-		ft.commit();
-
-		setTitle(getString(R.string.group_details_title));
+		if(savedInstanceState == null){
+			FragmentTransaction ft = getFragmentManager().beginTransaction();
+			ft.add(R.id.container, GroupDetailsFragment.newInstance());
+			ft.commit();
+			setTitle(getString(R.string.group_details_title));
+		}
 	}
+
 
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-		// Sync the toggle state after onRestoreInstanceState has occurred.
-
 		drawerToggle.syncState();
 	}
+
+
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		// Pass any configuration change to the drawer toggles
 		drawerToggle.onConfigurationChanged(newConfig);
 	}
+
 
 
 	private ActionBarDrawerToggle setupDrawerToggle() {
@@ -108,9 +83,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-
 	private void menuItemSelected(MenuItem menuItem){
-		// update the main content by replacing fragments
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 
 		String mTitle = "";
@@ -151,7 +124,6 @@ public class HomeActivity extends AppCompatActivity{
 		menuItem.setChecked(true);
 		setTitle(mTitle);
 		dlDrawer.closeDrawers();
-
 	}
 
 
@@ -163,29 +135,6 @@ public class HomeActivity extends AppCompatActivity{
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-
-
-	//	public void onSectionAttached(int number){
-//		switch (number){
-//			case 1:
-//				mTitle = getString(R.string.title_section1);
-//				break;
-//			case 2:
-//				mTitle = getString(R.string.title_section2);
-//				break;
-//			case 3:
-//				mTitle = getString(R.string.title_section3);
-//				break;
-//		}
-//	}
-//
-//	public void restoreActionBar(){
-//		ActionBar actionBar = getSupportActionBar();
-//		actionBar.setDisplayShowTitleEnabled(true);
-//		actionBar.setTitle(mTitle);
-//	}
-
 
 
 
